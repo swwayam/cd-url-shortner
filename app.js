@@ -40,11 +40,9 @@ const db = new sqlite3.Database('urls.db');
 // Use - send the following HTMl response -> 
 
 /**
-<h1>URL Shortener</h1>
-    <form action="/shorten" method="POST">
-      <input type="text" name="longUrl" placeholder="Enter a long URL">
-      <button type="submit">Shorten</button>
-    </form>
+ <h1>URL Shortened</h1>
+        <p>Short URL: <a href="/${shortUrl}">${req.headers.host}/${shortUrl}</a></p>
+        <p>Long URL: ${longUrl}</p>
 **/
 
 
