@@ -53,6 +53,34 @@ const db = new sqlite3.Database('urls.db');
 // - If a matching long URL is found, redirect the user to that URL using res.redirect()
 // - If no matching long URL is found, send a 404 error response indicating that the URL was not found
 
+
+
 // TODO: Start the server
 // - Use app.listen() to start the server and specify the port number to listen on 1337
 // - Add a callback function to log a message when the server starts running
+app.listen(1337, () => {
+  console.log('URL shortener server is running on port 1337');
+});
+
+
+
+
+/*******************
+ * 
+ * 
+ * Do Not Change Any Code Below This Line.
+ * 
+ * 
+ */
+
+
+app.get('/isDatabaseAsExpected', async (req, res) => {
+  const result = await new Promise((resolve, reject) => {
+    db.get('SELECT name FROM sqlite_master WHERE type="table" AND name="urls"', (err, row) => {
+      if (err) reject(err);
+      resolve(row);
+    });
+  });
+
+  res.status(200).send(result);
+});
