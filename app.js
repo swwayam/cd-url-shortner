@@ -19,10 +19,14 @@ const db = new sqlite3.Database('urls.db');
 // - Use app.get() to handle GET requests to the root URL ('/')
 // - Send an HTML response with a form that allows users to enter a long URL and submit it for shortening
 
-// Use send the following HTMl response -> 
+// Use - send the following HTMl response -> 
+
 /**
-
-
+<h1>URL Shortener</h1>
+    <form action="/shorten" method="POST">
+      <input type="text" name="longUrl" placeholder="Enter a long URL">
+      <button type="submit">Shorten</button>
+    </form>
 **/
 
 
@@ -32,6 +36,17 @@ const db = new sqlite3.Database('urls.db');
 // - Generate a unique short URL using the shortid library
 // - Insert the short URL and long URL pair into the urls table in the database
 // - Send an HTML response with the shortened URL and the original long URL
+
+// Use - send the following HTMl response -> 
+
+/**
+<h1>URL Shortener</h1>
+    <form action="/shorten" method="POST">
+      <input type="text" name="longUrl" placeholder="Enter a long URL">
+      <button type="submit">Shorten</button>
+    </form>
+**/
+
 
 // TODO: Implement the route for handling short URL redirection
 // - Use app.get() to handle GET requests to URLs with a short URL parameter (e.g., '/:shortUrl')
