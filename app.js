@@ -56,3 +56,6 @@ const db = new sqlite3.Database('urls.db');
 // TODO: Start the server
 // - Use app.listen() to start the server and specify the port number to listen on 1337
 // - Add a callback function to log a message when the server starts running
+app.listen(1337, () => {
+  console.log('URL shortener server is running on port 1337');
+});
