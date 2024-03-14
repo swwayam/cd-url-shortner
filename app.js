@@ -12,22 +12,22 @@ const db = new sqlite3.Database('urls.db');
 //   - short_url: TEXT UNIQUE
 //   - long_url: TEXT
 
+
 // TODO: Configure Express to parse URL-encoded request bodies
 // - Use app.use(express.urlencoded({ extended: true }))
 
 // TODO: Implement the route for serving the HTML form for URL shortening
 // - Use app.get() to handle GET requests to the root URL ('/')
 // - Send an HTML response with a form that allows users to enter a long URL and submit it for shortening
-
-// Use - send the following HTMl response -> 
-
-/**
-<h1>URL Shortener</h1>
+app.get('/', (req, res) => {
+  res.send(`
+    <h1>URL Shortener</h1>
     <form action="/shorten" method="POST">
       <input type="text" name="longUrl" placeholder="Enter a long URL">
       <button type="submit">Shorten</button>
     </form>
-**/
+  `);
+});
 
 
 // TODO: Implement the route for handling the URL shortening request
