@@ -1,2 +1,2 @@
 tabs: ['app.js']
-terminals: ['npm i', 'node app.js']
+terminals: ['node app.js', 'npm i']
